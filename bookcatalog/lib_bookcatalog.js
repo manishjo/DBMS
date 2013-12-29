@@ -38,6 +38,9 @@ bookcatalog.AddBookInfo= function(input,connection){
 //......................delete book ..............................................
 
 bookcatalog.deleteBookInfo = function(input,connection){
+  // connection.query(connection, ){
+
+  // }
   connection.query('delete from book_catalog where isbn = "'+input+'"',function(err,fields,row){
     if(err) throw err.code;
   });
