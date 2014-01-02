@@ -41,3 +41,23 @@ select * from sales;
 Alter table sales
 add constraint foreign key(salesId) references product(productId)
 on delete cascade;
+
+-- adding quantity to sales table  
+Alter table sales
+add column quantity int;
+
+-- updating quantity
+update sales
+set quantity = 2 where salesId = 1;
+
+-- joining table....
+
+select sales.salesId, product.productName,sales.quantity
+from sales,product
+where
+product.productId = sales.productId
+and product.productName = 'pen';
+
+-- showing both table...
+select * from product , sales;
+
